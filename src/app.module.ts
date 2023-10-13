@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { OwnerModule } from './owner/owner.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { OwnerModule } from './owner/owner.module';
       entities: [__dirname + '/entities/*{.ts,.js}'], // Liste des entités (modèles)
     }),
     OwnerModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

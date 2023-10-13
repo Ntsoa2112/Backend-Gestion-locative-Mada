@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { Owner } from '../entities/owner.entity';
 import { CreateOwnerDto } from './dto/create-owner.dto';
 import { UpdateOwnerDto } from './dto/update-owner.dto';
+import * as crypto from 'crypto';
 
 @Injectable()
 export class OwnerService {
@@ -13,7 +14,16 @@ export class OwnerService {
   ) {}
 
   async create(createOwnerDto: CreateOwnerDto) {
-    const owner = this.ownersRepository.create(createOwnerDto);
+    const { password, ...rest } = createOwnerDto;
+    const hashedPassword = crypto
+      .createHash('sha256')
+      .update(password)
+      .digest('hex');
+
+    const owner = this.ownersRepository.create({
+      ...rest,
+      password: hashedPassword,
+    });
     return await this.ownersRepository.save(owner);
   }
 
@@ -38,5 +48,32 @@ export class OwnerService {
   async remove(id: number) {
     const owner = await this.findOne(id);
     return await this.ownersRepository.remove(owner);
+  }
+
+  async findOwnerByEmailPassword(email: string, password: string) {
+    const hashedPassword = crypto
+      .createHash('sha256')
+      .update(password)
+      .digest('hex');
+
+    const owner = await this.ownersRepository
+      .createQueryBuilder('owner')
+      .where('owner.email = :email', { email })
+      .andWhere('owner.password = :hashedPassword', { hashedPassword })
+      .select([
+        'owner.id_owner',
+        'owner.first_name',
+        'owner.last_name',
+        'owner.email',
+        'owner.created_at',
+        'owner.updated_at',
+      ])
+      .getOne();
+
+    if (!owner) {
+      throw new NotFoundException('Email or password is incorrect');
+    }
+
+    return owner;
   }
 }

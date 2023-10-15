@@ -30,15 +30,15 @@ Backend-Gestion-locative-Mada est un projet backend de gestion locative conçu p
 
 ![UML](image/1697399332332.png)
 
-![MLD]()(image/1697399589860.png)
+![MLD](image/1697399589860.png)
 
-## [Installatio](https://github.com/Ntsoa2112/Backend-Gestion-locative-Mada#installation)n
+## Installations
 
 ```
 $ yarn install
 ```
 
-## [Running the app](https://github.com/Ntsoa2112/Backend-Gestion-locative-Mada#running-the-app)
+## Running the app
 
 ```
 # development

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Invoice</title>
+</head>
+<body>
+    <h1>Rent Invoice</h1>
+    <p>
+        Owner: {{ ownerFirstName }} {{ ownerLastName }}<br>
+        Tenant: {{ tenantFirstName }} {{ tenantLastName }}<br>
+        Date: {{ date }}<br>
+        Postal Code: {{ postalCode }}<br>
+    </p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rent</td>
+                <td>{{ rentAmount }} {{ currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        Total Amount: {{ rentAmount }} {{ currency }}
+    </p>
+</body>
+</html>

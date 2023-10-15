@@ -48,6 +48,13 @@ export class TenantService {
     return tenant;
   }
 
+  async findOneByProperty(id: number) {
+    const tenant = await this.tenantRepository.findOne({
+      where: { id_property: id },
+    });
+    return tenant;
+  }
+
   async update(id: number, updateTenantDto: UpdateTenantDto) {
     const tenant = await this.findOne(id);
 

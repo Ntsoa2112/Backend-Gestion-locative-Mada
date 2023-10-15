@@ -5,6 +5,7 @@ import { Property } from '../entities/property.entity';
 import { CreatePropertyDto } from './dto/create-property.dto';
 import { UpdatePropertyDto } from './dto/update-property.dto';
 import { OwnerService } from '../owner/owner.service';
+import { PropertyOwner } from 'src/type';
 
 @Injectable()
 export class PropertyService {
@@ -30,7 +31,7 @@ export class PropertyService {
     return await this.propertyRepository.save(property);
   }
 
-  async findAll() {
+  async findAll(): Promise<PropertyOwner[]> {
     return await this.propertyRepository.find({
       relations: ['owner'],
     });

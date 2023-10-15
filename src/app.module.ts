@@ -7,6 +7,10 @@ import { OwnerModule } from './owner/owner.module';
 import { AuthModule } from './auth/auth.module';
 import { PropertyModule } from './property/property.module';
 import { TenantModule } from './tenant/tenant.module';
+import { MailModule } from './mail/mail.module';
+import { ScheduleModule } from '@nestjs/schedule';
+import { RentInvoiceTask } from './rent-invoice.task';
+import { TenantController } from './tenant/tenant.controller';
 
 @Module({
   imports: [
@@ -24,12 +28,14 @@ import { TenantModule } from './tenant/tenant.module';
       logging: true, // Active les logs SQL
       entities: [__dirname + '/entities/*{.ts,.js}'], // Liste des entités (modèles)
     }),
+    ScheduleModule.forRoot(),
     OwnerModule,
     AuthModule,
     PropertyModule,
     TenantModule,
+    MailModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, RentInvoiceTask, TenantController],
 })
 export class AppModule {}

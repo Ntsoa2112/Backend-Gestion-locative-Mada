@@ -28,9 +28,9 @@ Backend-Gestion-locative-Mada est un projet backend de gestion locative conçu p
 
 ## Voici le MCD et le MLD du projet
 
-![UML](image/1697399332332.png)
+![UML](image/README/1697399332332.png)
 
-![MLD](image/1697399589860.png)
+![MLD](image/README/1697399589860.png)
 
 ## Installations
 

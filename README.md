@@ -26,7 +26,7 @@ Backend-Gestion-locative-Mada est un projet backend de gestion locative conçu p
 2. **PostgreSQL** : C'est un système de gestion de base de données relationnelle (SGBDR) open source très puissant et robuste
 3. **Nodemailer** : C'est une bibliothèque Node.js permettant d'envoyer des e-mails depuis une application Node.
 
-## Voici le MCD et le MLD du projet
+## Voici le UML et le MLD du projet
 
 ![UML](image/README/1697399332332.png)
 

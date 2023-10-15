@@ -25,6 +25,7 @@ Backend-Gestion-locative-Mada est un projet backend de gestion locative conçu p
 1. **Nest.js** : Il s'agit d'un framework de développement d'applications Node.js, construit avec TypeScript. Il est basé sur des principes de modularité et de réutilisabilité de code.
 2. **PostgreSQL** : C'est un système de gestion de base de données relationnelle (SGBDR) open source très puissant et robuste
 3. **Nodemailer** : C'est une bibliothèque Node.js permettant d'envoyer des e-mails depuis une application Node.
+4. **Docker** : utilisé pour orchestrer les services de la base de données PostgreSQL ainsi que le client PgAdmin
 
 ## Voici le UML et le MLD du projet
 

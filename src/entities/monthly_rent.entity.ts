@@ -25,7 +25,9 @@ export class MonthlyRent {
   @JoinColumn({ name: 'id_property' })
   property: Property;
 
-  @ManyToOne(() => Tenant, { eager: true })
+  @ManyToOne(() => Tenant, (tenant) => tenant.monthlyRents, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'id_tenant' })
   tenant: Tenant;
 
@@ -34,4 +36,10 @@ export class MonthlyRent {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @Column()
+  id_property: number;
+
+  @Column()
+  id_tenant: number;
 }

@@ -6,8 +6,10 @@ import {
   UpdateDateColumn,
   OneToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
 import { Property } from './property.entity';
+import { MonthlyRent } from './monthly_rent.entity';
 
 @Entity()
 export class Tenant {
@@ -41,4 +43,9 @@ export class Tenant {
 
   @Column()
   id_property: number;
+
+  @OneToMany(() => MonthlyRent, (monthlyRent) => monthlyRent.tenant, {
+    cascade: true,
+  })
+  monthlyRents: MonthlyRent[];
 }

@@ -50,12 +50,11 @@ export class MailService {
       html,
     });
     console.log(sendEmail.response);
-    console.log(sendEmail.envelope);
     const createMailDto = {
-      content: html,
-      datetime: new Date(),
       id_property: id_property,
       id_tenant: id_tenant,
+      datetime: new Date(),
+      content: html,
     };
     return await this.create(createMailDto);
   }
@@ -67,6 +66,13 @@ export class MailService {
 
   async findAll() {
     return await this.mailRepository.find();
+  }
+
+  async findAllByProperty(id_property: number) {
+    return await this.mailRepository.find({
+      where: { id_property },
+      order: { id: 'DESC' },
+    });
   }
 
   async findOne(id: number) {

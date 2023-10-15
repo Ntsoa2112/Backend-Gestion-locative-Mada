@@ -88,6 +88,29 @@ export class TenantController {
     return result;
   }
 
+  @Get('rentByOwner/:id_owner')
+  async findRentTenantByOwner(@Param('id_owner') id_owner: string) {
+    const result = [];
+    const propertiesOwner = await this.propertyService.findAllByOwner(
+      +id_owner,
+    );
+
+    await Promise.all(
+      propertiesOwner.map(async (propertyOwner) => {
+        const tenant = await this.tenantService.findOneByProperty(
+          propertyOwner.id_property,
+        );
+        if (tenant) {
+          const rental = await this.mailService.findAllByProperty(
+            propertyOwner.id_property,
+          );
+          result.push(...rental);
+        }
+      }),
+    );
+    return result;
+  }
+
   @Get('propertyWithoutTenant/:id_owner')
   async findAllPropertyWithoutTenant(@Param('id_owner') id_owner: string) {
     const result = [];

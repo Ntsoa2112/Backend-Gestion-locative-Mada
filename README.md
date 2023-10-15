@@ -2,39 +2,45 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Backend-Gestion-locative-Mada est un projet backend de gestion locative conçu pour faciliter la gestion des biens immobiliers à Madagascar.
 
-## Installation
+## Fonctionnalités
 
-```bash
+1. **Gestion des Biens Immobiliers** :
+   * Ajout de Biens
+   * Édition de Biens
+   * Suppression de Biens
+2. **Gestion des Locataires** :
+   * Ajout de Locataires
+   * Édition de Locataires
+   * Suppression de Locataires
+3. **Envoi de Factures Mensuelles** :
+   * Envoi automatique des factures de loyer aux Locataires
+   * Envoi automatique des factures de loyer aux Propriétaires
+
+## Technologies
+
+1. **Nest.js** : Il s'agit d'un framework de développement d'applications Node.js, construit avec TypeScript. Il est basé sur des principes de modularité et de réutilisabilité de code.
+2. **PostgreSQL** : C'est un système de gestion de base de données relationnelle (SGBDR) open source très puissant et robuste
+3. **Nodemailer** : C'est une bibliothèque Node.js permettant d'envoyer des e-mails depuis une application Node.
+
+## Voici le MCD et le MLD du projet
+
+![UML](image/1697399332332.png)
+
+![MLD]()(image/1697399589860.png)
+
+## [Installatio](https://github.com/Ntsoa2112/Backend-Gestion-locative-Mada#installation)n
+
+```
 $ yarn install
 ```
 
-## Running the app
+## [Running the app](https://github.com/Ntsoa2112/Backend-Gestion-locative-Mada#running-the-app)
 
-```bash
+```
 # development
 $ yarn run start
 
@@ -45,29 +51,4 @@ $ yarn run start:dev
 $ yarn run start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+[circleci-url]: https://circleci.com/gh/nestjs/nest
